@@ -5,6 +5,7 @@ import 'package:quran/quran.dart';
 
 import '../../constant.dart';
 
+// ignore: camel_case_types, must_be_immutable
 class surahviewappbar extends StatelessWidget {
    surahviewappbar({super.key,required this.pagenumm,required this.surahnameheadpage});
 String surahnameheadpage ;

@@ -5,7 +5,6 @@ import 'package:muslim/constant.dart';
 import 'package:muslim/route.dart';
 import 'package:muslim/views/sidebarview.dart';
 import 'package:muslim/wedget/home/lastread.dart';
-import 'package:quran/quran.dart';
 
 import '../wedget/home/appbar.dart';
 
@@ -33,8 +32,8 @@ class homeview extends StatelessWidget {
             height: 40,
           ),
           lastreadform(
-              headtext: "last Read",
-              meantext: getSurahNameArabic( getPageData((box.get('pagenum')))[0]["surah"]!),
+              
+              meantext: "last Read",
               icon: assets.lastreadicon,
               onTap: () {
                 
