@@ -4,6 +4,8 @@ import 'package:muslim/wedget/showsurah/surahappbar.dart';
 import 'package:muslim/wedget/showsurah/surahlistview.dart';
 import 'package:quran/quran.dart';
 
+import '../constant.dart';
+
 // ignore: camel_case_types, must_be_immutable
 class showsurah extends StatefulWidget {
   const showsurah({
@@ -23,13 +25,14 @@ class _showsurahState extends State<showsurah> {
   String fullsura = "";
   var box = Hive.box('saved');
   bool isselectedpage = false;
+  dynamic Jaznumber;
   @override
   void initState() {
     if ((box.get('pagenum')) == widget.pagenum) {
       isselectedpage = true;
     }
     super.initState();
-
+    Jaznumber = JazNum(widget.pagenum);
     formatpage();
   }
 
@@ -40,6 +43,7 @@ class _showsurahState extends State<showsurah> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: surahviewappbar(
+            Jaznumber: Jaznumber,
             isselectedpage: isselectedpage,
             onTap: () {
               box.put('pagenum', widget.pagenum);

@@ -9,8 +9,13 @@ class surahviewappbar extends StatelessWidget {
       required this.pagenumm,
       required this.surahnameheadpage,
       required this.onTap,
-      required this.isselectedpage});
+      required this.isselectedpage,
+      // ignore: non_constant_identifier_names
+      required this.Jaznumber,
+     });
   String surahnameheadpage;
+  // ignore: non_constant_identifier_names
+  int Jaznumber=0;
   int pagenumm;
   bool isselectedpage = false;
   void Function()? onTap;
@@ -35,10 +40,11 @@ class surahviewappbar extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          "{الجزء ${getVerseEndSymbol(getJuzNumber((getPageData((pagenumm))[0]["surah"])!, 1), arabicNumeral: true)}}",
+          "{الجزء ${getVerseEndSymbol(Jaznumber, arabicNumeral: true)}}",
           style: TextStyle(
             fontSize: arabicFontSize,
             color: Colors.black,
+             
           ),
         ),
         const Spacer(),
@@ -48,7 +54,7 @@ class surahviewappbar extends StatelessWidget {
               fontSize: arabicFontSize + 4,
               fontWeight: FontWeight.bold,
               color: const Color(0xFFEE5250),
-              fontFamily: "quran"),
+              fontFamily: "quran",),
         ),
       ],
     );
