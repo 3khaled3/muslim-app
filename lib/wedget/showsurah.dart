@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:muslim/wedget/showsurah/surahappbar.dart';
 import 'package:muslim/wedget/showsurah/surahlistview.dart';
 import 'package:quran/quran.dart';
@@ -20,9 +21,13 @@ class _showsurahState extends State<showsurah> {
   final List<String> fullpage = [];
   String surahnameheadpage = "";
   String fullsura = "";
-  bool selectetdpage = true;
+  var box = Hive.box('saved');
+  bool isselectedpage = false;
   @override
   void initState() {
+     if ((box.get('pagenum'))==widget.pagenum) {
+       isselectedpage=true;
+     }
     super.initState();
 
     formatpage();
@@ -34,8 +39,19 @@ class _showsurahState extends State<showsurah> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: surahviewappbar(
-              pagenumm: widget.pagenum, surahnameheadpage: surahnameheadpage),
+          child: surahviewappbar(isselectedpage: isselectedpage,
+            onTap: () {
+              
+              box.put('pagenum', widget.pagenum);
+              isselectedpage = true;
+              setState(() {
+                
+              });
+              // ignore: unused_local_variable
+            },
+            pagenumm: widget.pagenum,
+            surahnameheadpage: surahnameheadpage,
+          ),
         ),
         const Divider(),
         Expanded(

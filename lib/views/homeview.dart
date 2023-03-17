@@ -10,8 +10,8 @@ import '../wedget/home/appbar.dart';
 
 // ignore: camel_case_types, must_be_immutable
 class homeview extends StatelessWidget {
-   homeview({super.key});
- var box = Hive.box('saved');
+  homeview({super.key});
+  var box = Hive.box('saved');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,13 +32,10 @@ class homeview extends StatelessWidget {
             height: 40,
           ),
           lastreadform(
-              
               meantext: "last Read",
               icon: assets.lastreadicon,
               onTap: () {
-                
 
-//box.put('name', 'David');
 
                 var num = box.get('pagenum');
 
@@ -55,7 +52,6 @@ class homeview extends StatelessWidget {
               GoRouter.of(context).push(navegat.myquranviewRoute);
             },
           ),
-          
           const SizedBox(
             height: 20,
           ),
