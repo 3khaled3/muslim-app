@@ -17,16 +17,16 @@ class _surahviewState extends State<surahview> {
   List<Widget> slideList = [];
   CarouselController controller = CarouselController();
   int num = 0;
-  int page=1;
+  int page = 1;
   @override
   void initState() {
     super.initState();
     num = (widget.pagenum);
-   page= getPageNumber(num, 1);
-    
+    page = 605-(getPageNumber(num, 1));
 
-    for (var i = 0; i < 604; i++) {
-      slideList.add(showsurah(pagenum: i + 1));
+    
+    for (var i = 604; i > 0; i--) {
+      slideList.add(showsurah(pagenum: i ));
     }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       moveto();
@@ -34,7 +34,8 @@ class _surahviewState extends State<surahview> {
   }
 
   moveto() async {
-    await controller.animateToPage(page-1);
+    await controller.animateToPage(page - 1);
+    print({page - 1});
   }
 
   @override
@@ -45,17 +46,14 @@ class _surahviewState extends State<surahview> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: SafeArea(
           child: CarouselSlider(
-            carouselController: controller, items: slideList,
-
+            carouselController: controller,
+            items: slideList,
             options: CarouselOptions(
               viewportFraction: 1.0,
               enlargeCenterPage: false,
               height: MediaQuery.of(context).size.height,
-
               enableInfiniteScroll: true,
-              
             ),
-            
           ),
         ),
       ),
