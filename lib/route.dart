@@ -25,7 +25,7 @@ abstract class navegat {
       ),
       GoRoute(
         path: homeViewRoute,
-        builder: (context, state) =>  homeview(),
+        builder: (context, state) => homeview(),
       ),
       GoRoute(
         path: tasbihViewRoute,
@@ -42,14 +42,14 @@ abstract class navegat {
           return surahview(pagenum: surahnum);
         },
       ),
-       GoRoute(
-      path: surahviewbypageview,
-      builder: (context, state) {
-        dynamic surahnum = state.extra as int;
-        return surahviewbypage(pagenum:surahnum);
-      },
-    ),
-    GoRoute(
+      GoRoute(
+        path: surahviewbypageview,
+        builder: (context, state) {
+          dynamic surahnum = state.extra as int;
+          return surahviewbypage(pagenum: surahnum);
+        },
+      ),
+      GoRoute(
         path: SettingsviewRoute,
         builder: (context, state) => const Settings(),
       ),

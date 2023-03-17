@@ -35,8 +35,6 @@ class homeview extends StatelessWidget {
               meantext: "last Read",
               icon: assets.lastreadicon,
               onTap: () {
-
-
                 var num = box.get('pagenum');
 
                 GoRouter.of(context)

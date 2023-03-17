@@ -25,9 +25,9 @@ class _showsurahState extends State<showsurah> {
   bool isselectedpage = false;
   @override
   void initState() {
-     if ((box.get('pagenum'))==widget.pagenum) {
-       isselectedpage=true;
-     }
+    if ((box.get('pagenum')) == widget.pagenum) {
+      isselectedpage = true;
+    }
     super.initState();
 
     formatpage();
@@ -39,14 +39,12 @@ class _showsurahState extends State<showsurah> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: surahviewappbar(isselectedpage: isselectedpage,
+          child: surahviewappbar(
+            isselectedpage: isselectedpage,
             onTap: () {
-              
               box.put('pagenum', widget.pagenum);
               isselectedpage = true;
-              setState(() {
-                
-              });
+              setState(() {});
               // ignore: unused_local_variable
             },
             pagenumm: widget.pagenum,

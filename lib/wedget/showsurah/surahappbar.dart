@@ -8,8 +8,8 @@ class surahviewappbar extends StatelessWidget {
       {super.key,
       required this.pagenumm,
       required this.surahnameheadpage,
-    required this.onTap ,
-     required this.isselectedpage });
+      required this.onTap,
+      required this.isselectedpage});
   String surahnameheadpage;
   int pagenumm;
   bool isselectedpage = false;
@@ -19,21 +19,25 @@ class surahviewappbar extends StatelessWidget {
     return Row(
       children: [
         GestureDetector(
-          onTap:onTap,
+          onTap: onTap,
           child: CircleAvatar(
             backgroundColor: const Color.fromARGB(0, 255, 255, 255),
             child: Image.asset(
                 isselectedpage ? assets.selectbookmark : assets.bookmarkicon),
           ),
         ),
-        const SizedBox(
-          width: 10,
-        ),
         Text(
           getVerseEndSymbol(pagenumm, arabicNumeral: true),
           style: TextStyle(
+              fontSize: arabicFontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue),
+        ),
+        const Spacer(),
+        Text(
+          "{الجزء ${getVerseEndSymbol(getJuzNumber((getPageData((pagenumm))[0]["surah"])!, 1), arabicNumeral: true)}}",
+          style: TextStyle(
             fontSize: arabicFontSize,
-            fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),

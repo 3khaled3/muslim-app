@@ -19,19 +19,18 @@ class _surahviewbypageState extends State<surahviewbypage> {
   @override
   void initState() {
     super.initState();
-    num =605- (widget.pagenum);
+    num = 605 - (widget.pagenum);
 
-    
     for (var i = 605; i > 1; i--) {
       slideList.add(showsurah(pagenum: i - 1));
-      }
+    }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       moveto();
     });
   }
 
   moveto() async {
-    await controller.animateToPage(num-1);
+    await controller.animateToPage(num - 1);
   }
 
   @override

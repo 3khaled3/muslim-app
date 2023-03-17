@@ -19,15 +19,16 @@ class SurahPages extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: countsurahpages.length,
       itemBuilder: (context, index) {
-        return GestureDetector(onTap: () {
-            GoRouter.of(context)
-            .push(navegat.surahviewbypageview, extra: countsurahpages[index]);
-        },
+        return GestureDetector(
+          onTap: () {
+            GoRouter.of(context).push(navegat.surahviewbypageview,
+                extra: countsurahpages[index]);
+          },
           child: Container(
             color: const Color.fromARGB(0, 255, 193, 7),
             child: Padding(
-              padding:
-                  const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
+              padding: const EdgeInsets.only(
+                  top: 10, left: 20, right: 20, bottom: 10),
               child: Column(
                 children: [
                   Row(
@@ -40,7 +41,6 @@ class SurahPages extends StatelessWidget {
                         ),
                         style: TextStyle(color: Colors.blue[400], fontSize: 20),
                       ),
-                      
                       Text(
                         surahh.surahnameAR,
                         style: TextStyle(color: Colors.blue[400], fontSize: 24),
