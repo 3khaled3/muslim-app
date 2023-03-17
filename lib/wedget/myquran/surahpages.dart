@@ -23,31 +23,35 @@ class SurahPages extends StatelessWidget {
             GoRouter.of(context)
             .push(navegat.surahviewbypageview, extra: countsurahpages[index]);
         },
-          child: Padding(
-            padding:
-                const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      getVerseEndSymbol(
-                        countsurahpages[index],
-                        arabicNumeral: true,
+          child: Container(
+            color: const Color.fromARGB(0, 255, 193, 7),
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        getVerseEndSymbol(
+                          countsurahpages[index],
+                          arabicNumeral: true,
+                        ),
+                        style: TextStyle(color: Colors.blue[400], fontSize: 20),
                       ),
-                      style: TextStyle(color: Colors.blue[400], fontSize: 20),
-                    ),
-                    const Spacer(),
-                    Text(
-                      surahh.surahnameAR,
-                      style: TextStyle(color: Colors.blue[400], fontSize: 24),
-                    ),
-                  ],
-                ),
-                const Divider(
-                  thickness: .9,
-                )
-              ],
+                      
+                      Text(
+                        surahh.surahnameAR,
+                        style: TextStyle(color: Colors.blue[400], fontSize: 24),
+                      ),
+                    ],
+                  ),
+                  const Divider(
+                    thickness: .9,
+                  )
+                ],
+              ),
             ),
           ),
         );
