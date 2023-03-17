@@ -27,6 +27,7 @@ class _surahviewState extends State<surahview> {
     
     for (var i = 604; i > 0; i--) {
       slideList.add(showsurah(pagenum: i ));
+      
     }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       moveto();
@@ -35,7 +36,7 @@ class _surahviewState extends State<surahview> {
 
   moveto() async {
     await controller.animateToPage(page - 1);
-    print({page - 1});
+  
   }
 
   @override
