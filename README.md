@@ -14,3 +14,6 @@ This repository contains the source code for a Quran App, a mobile application d
 - **Bookmarks**: Users can bookmark their favorite verses or pages for quick access.
 
 - **Font Size Customization**: The app allows users to customize the font size to enhance readability.
+
+## Screen
+![Uploading combine_images.png…]()
